@@ -5,10 +5,12 @@ pipeline {
             steps {
                 echo "This is Build stage"
             }
+         }
             stage ('TEST') {
             steps {
                 echo "This is Test stage"
             }
+         }
             stage ('Deploy') {
             steps {
                 echo "This is Deployl stage"
