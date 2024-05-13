@@ -1,0 +1,63 @@
+pipeline {
+
+  agent any;
+   
+  stages {
+
+    stage ('BUILD') {
+     
+        steps {
+        
+           echo "This is Building stage" 
+
+         }
+    }
+}
+
+     stage ( 'TEST') {
+
+      parallel {
+
+      stage ( 'Testing on Chrome") {
+ 
+       steps {
+
+        echo "Testing in Chrome Browser"
+       
+       } 
+    }
+    stage ( 'Testing on Edge") {
+ 
+       steps {
+
+        echo "Testing in Chrome Browser"
+       
+       } 
+    }
+  }
+}
+
+ stage ( 'DEPLOY') {
+
+      parallel {
+
+      stage ( 'DEPLOYING IN QA') {
+ 
+       steps {
+
+        echo "Deploying in QA environment"
+       
+       } 
+    }
+    stage ( 'DEPLOYING IN DEV') {
+ 
+       steps {
+
+        echo "Deploying in Dev environment"
+       
+       } 
+    }
+  }
+ }
+}
+
