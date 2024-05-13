@@ -1,47 +1,46 @@
 pipeline {
 
-  agent any;
+    agent any;
    
-  stages {
+       stages {
 
-    stage ('BUILD') {
+           stage ('BUILD') {
      
-        steps {
+              steps {
         
-           echo "This is Building stage" 
+                  echo "This is Building stage" 
 
+              }
+            }
          }
-    }
-}
 
-     stage ( 'TEST') {
+     stage ( 'TESTING PARALLELY') {
 
       parallel {
 
-      stage ( 'Testing on Chrome') {
+      stage ( 'Testing on Chrome' ) {
  
-       steps {
+         steps {
 
-        echo "Testing in Chrome Browser"
+          echo "Testing on Chrome Browser"
        
        } 
     }
-    stage ( 'Testing on Edge') {
+       stage ( 'Testing on Edge' ) {
  
-       steps {
+          steps {
 
-        echo "Testing in Chrome Browser"
-       
-       } 
+            echo "Testing on Chrome Browser"
+        } 
+      }
     }
   }
-}
 
- stage ( 'DEPLOY') {
+ stage ( 'DEPLOY PARALLELY') {
 
       parallel {
 
-      stage ( 'DEPLOYING IN QA') {
+      stage ( 'DEPLOYING in QA') {
  
        steps {
 
