@@ -4,59 +4,59 @@ pipeline {
    
        stages {
 
-           stage ('BUILD') {
+            stage ('BUILD') {
      
-              steps {
+                 steps {
         
-                  echo "This is Building stage" 
+                    echo "This is Building stage" 
 
+                }
               }
-            }
-         }
+           }
 
      stage ( 'TESTING PARALLELY') {
 
-      parallel {
+        parallel {
 
-      stage ( 'Testing on Chrome' ) {
+           stage ( 'Testing on Chrome' ) {
  
-         steps {
+                 steps {
 
-          echo "Testing on Chrome Browser"
+                    echo "Testing on Chrome Browser"
        
-       } 
-    }
-       stage ( 'Testing on Edge' ) {
+                  } 
+              }
+             stage ( 'Testing on Edge' ) {
  
-          steps {
+                  steps {
 
-            echo "Testing on Chrome Browser"
-        } 
-      }
-    }
-  }
+                    echo "Testing on Chrome Browser"
+                  } 
+            }
+        }
+     }
 
  stage ( 'DEPLOY PARALLELY') {
 
-      parallel {
+          parallel {
 
-      stage ( 'DEPLOYING in QA') {
+              stage ( 'DEPLOYING in QA') {
  
-       steps {
+                  steps {
 
-        echo "Deploying in QA environment"
+                      echo "Deploying in QA environment"
        
-       } 
-    }
-    stage ( 'DEPLOYING IN DEV') {
+                    } 
+                 }
+               stage ( 'DEPLOYING IN DEV') {
  
-       steps {
+                   steps {
 
-        echo "Deploying in Dev environment"
+                    echo "Deploying in Dev environment"
        
-       } 
-    }
+                    } 
+                } 
+           }
+       }
   }
- }
-}
 
