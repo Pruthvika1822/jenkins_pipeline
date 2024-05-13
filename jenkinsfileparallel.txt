@@ -18,7 +18,7 @@ pipeline {
 
         parallel {
 
-           stage ('Testing on Chrome') {
+           stage ('TESTING ON CHROME') {
  
                  steps {
 
@@ -26,7 +26,7 @@ pipeline {
        
                   } 
               }
-             stage ('Testing on Edge') {
+             stage ('TESTING ON EDGE') {
  
                   steps {
 
@@ -40,7 +40,7 @@ pipeline {
 
           parallel {
 
-              stage ('DEPLOYING in QA') {
+              stage ('DEPLOYING IN QA') {
  
                   steps {
 
