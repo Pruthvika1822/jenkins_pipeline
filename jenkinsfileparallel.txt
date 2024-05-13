@@ -14,11 +14,11 @@ pipeline {
               }
            }
 
-     stage ( 'TESTING PARALLELY') {
+     stage ('TESTING PARALLELY') {
 
         parallel {
 
-           stage ( 'Testing on Chrome' ) {
+           stage ('Testing on Chrome') {
  
                  steps {
 
@@ -26,7 +26,7 @@ pipeline {
        
                   } 
               }
-             stage ( 'Testing on Edge' ) {
+             stage ('Testing on Edge') {
  
                   steps {
 
@@ -36,11 +36,11 @@ pipeline {
         }
      }
 
- stage ( 'DEPLOY PARALLELY') {
+ stage ('DEPLOY PARALLELY') {
 
           parallel {
 
-              stage ( 'DEPLOYING in QA') {
+              stage ('DEPLOYING in QA') {
  
                   steps {
 
@@ -48,7 +48,7 @@ pipeline {
        
                     } 
                  }
-               stage ( 'DEPLOYING IN DEV') {
+               stage ('DEPLOYING IN DEV') {
  
                    steps {
 
