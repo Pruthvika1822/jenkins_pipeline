@@ -5,14 +5,10 @@ pipeline {
        stages {
 
             stage ('BUILD') {
-     
-                 steps {
-        
-                    echo "This is Building stage" 
-
+                steps {
+                    echo "This is Building stage"
                 }
               }
-           }
 
      stage ('TESTING PARALLELY') {
 
@@ -58,5 +54,6 @@ pipeline {
                 } 
            }
        }
+     }
   }
 
